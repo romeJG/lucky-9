@@ -7,30 +7,30 @@ function generateCard() {
    var suit = [suitsOuter[suitIndex], suitsInner[suitIndex]];
    var rankIndex = Math.floor(Math.random() * ranksOuter.length);
    var rank = [ranksOuter[rankIndex], ranksInner[rankIndex]];
-   document.getElementById('card1').innerHTML = "<img class='img-responsive img-fluid c1' src='pix/"+suit[0]+rank[0]+".png'>";
+   document.getElementById('card1').innerHTML = "<img class='img-responsive img-fluid c1' src='pix/" + suit[0] + rank[0] + ".png'>";
    var r1 = rank[0];
    var suitIndex = Math.floor(Math.random() * suitsOuter.length)
    var suit = [suitsOuter[suitIndex], suitsInner[suitIndex]];
    var rankIndex = Math.floor(Math.random() * ranksOuter.length);
    var rank = [ranksOuter[rankIndex], ranksInner[rankIndex]];
-   document.getElementById('card2').innerHTML = "<img class='img-responsive img-fluid c2' src='pix/"+suit[0]+rank[0]+".png'>";
+   document.getElementById('card2').innerHTML = "<img class='img-responsive img-fluid c2' src='pix/" + suit[0] + rank[0] + ".png'>";
    var r2 = rank[0];
-   if (r1=='j'||r1=='q'||r1=='k'){
-      r1=0;
+   if (r1 == 'j' || r1 == 'q' || r1 == 'k') {
+      r1 = 0;
    }
-   if (r2=='j'||r2=='q'||r2=='k'){
-      r2=0;
+   if (r2 == 'j' || r2 == 'q' || r2 == 'k') {
+      r2 = 0;
    }
-   lucky(r1,r2);
+   lucky(r1, r2);
 }
 
 
-function lucky(r1,r2){
-   total = r1+r2;
-   if (total>10){
-      total-=10;
+function lucky(r1, r2) {
+   total = r1 + r2;
+   if (total > 10) {
+      total -= 10;
    }
-   if (total == 9){
+   if (total == 9) {
       document.getElementById('lucky').innerHTML = "<h1 class='win'>You Win</h1>";
    }
    else {
