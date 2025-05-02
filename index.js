@@ -1,3 +1,5 @@
+
+let ctr = 0
 function generateCard() {
    var suitsInner = ["h", "s", "d", "c"];
    var suitsOuter = ["h", "s", "d", "c"];
@@ -31,9 +33,11 @@ function lucky(r1, r2) {
       total -= 10;
    }
    if (total == 9) {
-      document.getElementById('lucky').innerHTML = "<h1 class='win'>You Win</h1>";
+      document.getElementById('lucky').innerHTML = "<h1 class='win'>" + total + ", You Win. It took you " + ctr + " tries.</h1>";
+      ctr = 0
    }
    else {
-      document.getElementById('lucky').innerHTML = "<h1 class='lose'>You Lose</h1>";
+      document.getElementById('lucky').innerHTML = "<h1 class='lose'>" + total + ", You Lose</h1>";
+      ctr += 1
    }
 }
